@@ -1,6 +1,6 @@
 @import '../../assets/forms';
 
-.input-container {
+.input--container {
   &.is-selected {
     border: 3px solid var(--secondary-color);
   }
@@ -12,17 +12,17 @@
   margin-bottom: 10px;
   width: auto;
   height: auto;
-  .server-image {
+  .server--image {
     position: relative;
   }
 
-  .server-description {
+  .server--description {
     display: flex;
     flex-direction: column;
     padding-left: 10px;
 
 
-    .server-header {
+    .server--header {
       display: flex;
       h3 {
         font-size: var(--font-size-s);
@@ -34,7 +34,7 @@
         font-weight: var(--font-weight-bold);
       }
     }
-    .server-text {
+    .server--text {
       font-weight: var(--font-weight-regular);
       font-size: var(--font-size-sm);
       margin-top: -15px;

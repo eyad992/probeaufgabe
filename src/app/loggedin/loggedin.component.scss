@@ -1,0 +1,16 @@
+@import '../../assets/forms';
+
+.container {
+ .login--container {
+   width: 367px;
+   height: 254px;
+   padding: 32px;
+   padding-bottom: 32px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 10px 40px -14px var(--box-shadow);
+ }
+}
