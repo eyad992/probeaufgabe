@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="container--inner">
+    <div class="form--header">
+      <div class="back--button">
+        <a routerLink="/signup">
+          <img src="assets/img/chevron-left.png" width="25px" height="25px" alt="Back">
+        </a>
+      </div>
+      <h3>Registrierung</h3>
+    </div>
+    <form>
+      <div class="form--content">
+        <div class="input-container" [ngClass]="{ 'is-selected': selectedDiv === 1 }" (click)="toggleServer(1)">
+          <div class="server-image">
+            <img src="assets/img/server1.png" width="85px" height="85px" alt="Server"/>
+          </div>
+          <div class="server-description">
+            <div class="server-header">
+              <h3>SERVER 1</h3>
+              <h4>(Classic)</h4>
+            </div>
+            <div class="server-text">
+              <p>Klassisches OFM-Erlebnis Premiumwährung KIXX 100.000+ Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-container" [ngClass]="{ 'is-selected': selectedDiv === 2 }" (click)="toggleServer(2)">
+          <div class="server-image">
+            <img src="assets/img/server2.png" width="85px" height="85px" alt="Server"/>
+          </div>
+          <div class="server-description">
+            <div class="server-header">
+              <h3>SERVER 2</h3>
+              <h4>(Plus)</h4>
+            </div>
+            <div class="server-text">
+              <p>Old-Shool Fussballmanager Premiumfeature Personal 40.000+ Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-container"[ngClass]="{ 'is-selected': selectedDiv === 3 }" (click)="toggleServer(3)"
+        >
+          <div class="server-image">
+            <img src="assets/img/server3.png" width="85px" height="85px" alt="Server"/>
+          </div>
+          <div class="server-description">
+            <div class="server-header">
+              <h3>SERVER 3</h3>
+              <h4>(Beta)</h4>
+            </div>
+            <div class="server-text">
+              <p>Neue Features testen Premiumwährung KIXX 10.000+ Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit">Team anlegen</button>
+      <p>At vero eos et <a href="#" style="text-decoration: underline;">accusam</a> et justo duo dolores et ea rebum. Stet clita kasd gubergren, <a href="#" style="text-decoration: underline;">no sea takimata.</a></p>
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+

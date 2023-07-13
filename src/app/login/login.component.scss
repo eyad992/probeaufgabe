@@ -1,0 +1,43 @@
+@import '../../assets/forms';
+
+.container {
+  .login--container {
+    padding: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 40px -14px var(--box-shadow);
+  }
+}
+
+  button {
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    font-size: var(--font-size-md);
+    color: var(--background-color);
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+
+    &.button--signin {
+      background-color: var(--secondary-color);;
+    }
+    &.button--signup {
+      background-color: var(--primary-color);
+    }
+  }
+  span, p {
+    text-align: center;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-s);
+  }
+  p {
+    font-size: var(--font-size-xs);
+  }

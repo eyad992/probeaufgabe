@@ -1,0 +1,17 @@
+@import '../../assets/forms';
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  input[type="checkbox"] {
+    width: 24px;
+    border: 1px solid var(--border-color);
+    height: 24px;
+  }
+  label {
+    padding-left: 4px;
+    font-size: var(--font-size-s);
+  }
+}
+
+

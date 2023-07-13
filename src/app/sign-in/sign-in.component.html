@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="container--inner">
+    <div class="form--header">
+      <div class="back--button">
+        <a routerLink="/">
+          <img src="assets/img/chevron-left.png" width="25px" height="25px" alt="Back">
+        </a>
+      </div>
+      <h3>Anmeldung</h3>
+    </div>
+
+
+    <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+      <div class="form--content">
+
+        <div class="input-container">
+          <div *ngIf="Form.get('email')!.invalid && (Form.get('email')!.dirty) && (Form.get('email')!.errors?.email)" class="error-message">Bitte gib eine gültige Email-Adresse ein</div>
+          <input class="custom-input" type="email" id="email" formControlName="email"  required placeholder="Email" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)" [ngClass]="{'invalid-input': Form.get('email')!.invalid && (Form.get('email')!.dirty || Form.get('email')!.touched)}">
+        </div>
+        <div class="input-container">
+          <div *ngIf="Form.get('password')!.invalid && (Form.get('password')!.dirty || Form.get('password')!.touched)">
+            <div *ngIf="submitted && Form.get('password')!.errors?.required" class="error-message">Password is required.</div>
+          </div>
+          <input class="custom-input" type="password" id="password" formControlName="password" required
+          placeholder="Password" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
+          <div class="remember-me">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Angemeldet bleiben</label>
+          </div>
+        </div>
+        <div *ngIf="isLoading; else submitButton">
+          <button class="spinner-button">
+            <div class="spinner-image"></div>
+            Wird angemeldet...
+          </button>
+        </div>
+
+
+        <ng-template #submitButton>
+          <button type="submit" [disabled]="isLoading">Anmelden</button>
+        </ng-template>
+
+      </div>
+      <div class="signin--splitter">
+        <span>
+          Oder
+        </span>
+      </div>
+    </form>
+
+
+
+    <!-- <form (ngSubmit)="onSubmit()">
+      <div class="form--content">
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" required
+        placeholder="Email" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
+        <input type="password" id="password" name="password" [(ngModel)]="user.password" required
+        placeholder="Password" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
+        <div class="remember-me">
+          <input type="checkbox" id="remember-me">
+          <label for="remember-me">Angemeldet bleiben</label>
+        </div>
+       <button type="submit">Anmelden</button>
+
+      </div>
+      <div class="signin--splitter">
+        <span>
+          Oder
+        </span>
+      </div>
+    </form> -->
+    <div class="google-login">
+      <button class="login-with-google" type="button">
+          Anmeldung mit Google
+      </button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,43 @@
+@import '../../assets/forms';
+
+.input-container {
+  &.is-selected {
+    border: 3px solid var(--secondary-color);
+  }
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border: 3px solid var(--border-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  height: auto;
+  .server-image {
+    position: relative;
+  }
+
+  .server-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+
+    .server-header {
+      display: flex;
+      h3 {
+        font-size: var(--font-size-s);
+        font-weight: var(--font-weight-bold);
+        margin-right: 5px;
+      }
+      h4 {
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-weight-bold);
+      }
+    }
+    .server-text {
+      font-weight: var(--font-weight-regular);
+      font-size: var(--font-size-sm);
+      margin-top: -15px;
+    }
+  }
+}
