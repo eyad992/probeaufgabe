@@ -3,78 +3,60 @@
     <div class="form--header">
       <div class="back--button">
         <a routerLink="/">
-          <img src="assets/img/chevron-left.png" width="25px" height="25px" alt="Back">
+          <img src="assets/img/chevron-left.png" width="16px" height="18px" alt="Back">
         </a>
       </div>
       <h3>Registrierung</h3>
     </div>
+
     <form [formGroup]="Form" (ngSubmit)="onSubmit()">
       <div class="form--content">
-        <input class="custom-input" type="text" id="name"formControlName="username" required
-        placeholder="Name" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
-
-        <div class="input-container">
+        <input class="custom-input" type="text" id="name" formControlName="username" required
+               placeholder="Name" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
+      <div class="input-container">
           <div *ngIf="Form.get('email')!.invalid && (Form.get('email')!.dirty) && (Form.get('email')!.errors?.email)" class="error-message">Bitte gib eine gültige Email-Adresse ein</div>
-          <!-- <div *ngIf="Form.get('email')?.errors?.email" class="error-message">Email is required.</div> -->
-          <!-- <div *ngIf="Form.get('email')!.errors?.email" class="error-message">Invalid email format.</div> -->
-          <!-- <div *ngIf="Form.get('email')!.errors?.email">Invalid email format.</div> -->
           <input class="custom-input" type="email" id="email" formControlName="email"  required placeholder="Email" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
         </div>
-
-        <!-- <input class="custom-input" type="email" id="email" formControlName="email"  required placeholder="Email" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
-        <div *ngIf="Form.get('email')!.invalid && (Form.get('email')!.dirty)">
-          <div *ngIf="Form.get('email')?.errors?.required">Email is required.</div>
-          <div *ngIf="Form.get('email')!.errors?.email">Invalid email format.</div>
-        </div> -->
 
         <div class="input-container">
           <div *ngIf="Form.get('password')!.invalid && (Form.get('password')!.dirty || Form.get('password')!.touched)">
             <div *ngIf="submitted && Form.get('password')!.errors?.required" class="error-message">Password is required.</div>
           </div>
           <input class="custom-input" type="password" id="password" formControlName="password" required
-          placeholder="Password" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
+                 placeholder="Password" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
         </div>
-        <!-- <input class="custom-input" type="password" id="password" formControlName="password" required
-        placeholder="Password" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
-        <div *ngIf="Form.get('password')!.invalid && (Form.get('password')!.dirty || Form.get('password')!.touched)">
-          <div *ngIf="submitted && Form.get('password')!.errors?.required">Password is required.</div>
-        </div> -->
 
         <div class="input-container">
-          <div *ngIf="submitted && (Form.get('repeatPassword') !== Form.get('password'))" class="error-message">
-            Passwords do not match !
+          <div *ngIf="submitted && (Form.get('repeatPassword')?.value !== Form.get('password')?.value)" class="error-message">
+            Passwords do not match!
           </div>
           <input class="custom-input" type="password" id="repeatPassword" formControlName="repeatPassword" required
-          placeholder="Password wiederholen" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)" >
+                 placeholder="Password wiederholen" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)">
         </div>
 
-        <!-- <input class="custom-input" type="password" id="repeatPassword" formControlName="repeatPassword" required
-        placeholder="Password wiederholen" (focus)="clearPlaceholder($event)" (blur)="restorePlaceholder($event)" >
-        <div *ngIf="submitted && Form.get('repeatPassword') != Form.get('password')">
-          <p>Passwords do not match.</p>
-        </div> -->
         <div *ngIf="isLoading; else submitButton">
           <button class="spinner-button">
-            Wird angemeldet...
+            <div class="button-content">
+              <img src="../../assets/img/loading.png" alt="Image" class="icon">
+              Wird angemeldet...
+            </div>
           </button>
         </div>
 
         <ng-template #submitButton>
           <button type="submit" [disabled]="isLoading">Kostenlos registrieren</button>
         </ng-template>
-
       </div>
+
       <span>Bereits Angemeldet? <a routerLink="/signin">Zum Login</a></span>
+
       <div class="signin--splitter">
-        <span>
-          Oder
-        </span>
+        <span>Oder</span>
       </div>
     </form>
+
     <div class="google-login">
-      <button class="login-with-google" type="button">
-          Anmeldung mit Google
-      </button>
+      <button class="login-with-google" type="button">Anmeldung mit Google</button>
     </div>
   </div>
 </div>

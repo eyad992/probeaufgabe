@@ -40,6 +40,10 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('Email:', this.Form.value.username);
+    console.log('Password:', this.Form.value.email);
+    console.log('Email:', this.Form.value.password);
+    console.log('Password:', this.Form.value.repeatPassword);
     this.submitted = true;
     this.isLoading = true;
     if (this.Form.invalid) {

@@ -1,4 +1,50 @@
-@import '../../assets/forms';
+
+@import '../shared/styles/forms.scss';
+
+.container {
+  @include container-styles;
+
+  .form--header {
+    @include form-header-styles;
+  }
+
+  form {
+    @include form--content;
+    .form--content {
+      input.custom-input {
+        @include input-styles;
+      }
+
+      .input-container {
+        @include input-container-styles;
+
+        .error-message {
+          @include input-error-styles;
+        }
+      }
+
+      button {
+        @include button-styles;
+      }
+
+      .spinner-button {
+        @include spinner-button-styles;
+      }
+    }
+
+    span {
+      @include footer-styles;
+    }
+
+    .signin--splitter {
+      @include splitter-styles;
+    }
+  }
+
+  .google-login {
+    @include google-login-styles;
+  }
+}
 
 .remember-me {
   display: flex;
@@ -8,6 +54,7 @@
     border: 1px solid var(--border-color);
     height: 24px;
   }
+
   label {
     padding-left: 4px;
     font-size: var(--font-size-s);

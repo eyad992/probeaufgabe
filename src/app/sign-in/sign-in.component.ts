@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -34,6 +35,8 @@ export class SignInComponent {
     }
   }
   onSubmit() {
+    console.log('Email:', this.Form.value.email);
+    console.log('Password:', this.Form.value.password);
     this.submitted = true;
     this.isLoading = true;
     if (this.Form.invalid) {
@@ -47,7 +50,7 @@ export class SignInComponent {
         this.router.navigate(['/server']);
         this.Form.reset();
         this.isLoading = false;
-      }, 2000);
+      }, 1000);
     }
 }
 }

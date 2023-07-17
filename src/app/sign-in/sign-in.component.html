@@ -3,7 +3,7 @@
     <div class="form--header">
       <div class="back--button">
         <a routerLink="/">
-          <img src="assets/img/chevron-left.png" width="25px" height="25px" alt="Back">
+          <img src="assets/img/chevron-left.png" width="16px" height="18px" alt="Back">
         </a>
       </div>
       <h3>Anmeldung</h3>
@@ -28,10 +28,13 @@
             <label for="remember-me">Angemeldet bleiben</label>
           </div>
         </div>
+
         <div *ngIf="isLoading; else submitButton">
           <button class="spinner-button">
-            <div class="spinner-image"></div>
-            Wird angemeldet...
+            <div class="button-content">
+              <img src="../../assets/img/loading.png" alt="Image" class="icon">
+              Wird angemeldet...
+            </div>
           </button>
         </div>
 

@@ -13,6 +13,7 @@
   --font-size-s: 13px;
   --font-size-sm: 11px;
   --font-size-xs: 10px;
+  --font-size-xxs: 9px;
 }
 :root {
   --font-family: 'Roboto', sans-serif;
@@ -22,7 +23,6 @@
 }
 
 body {
-  font-size: var(--font-size-medium);
   font-family: 'Roboto', sans-serif;
 }
 

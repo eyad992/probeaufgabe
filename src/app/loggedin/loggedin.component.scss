@@ -1,16 +1,23 @@
-@import '../../assets/forms';
+@import '../shared/styles/forms.scss';
 
 .container {
- .login--container {
-   width: 367px;
-   height: 254px;
-   padding: 32px;
-   padding-bottom: 32px;
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   box-shadow: 0 10px 40px -14px var(--box-shadow);
- }
+  @include container-styles;
+  .login--container {
+    padding-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 40px -14px var(--box-shadow);
+
+    p {
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+
+  .form--header {
+    @include form-header-styles;
+  }
 }

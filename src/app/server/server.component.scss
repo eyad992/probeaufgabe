@@ -1,17 +1,39 @@
-@import '../../assets/forms';
+@import '../shared/styles/forms.scss';
+
+.container {
+  @include container-styles;
+
+  .form--header {
+    @include form-header-styles;
+  }
+}
+
+form {
+  @include form--content;
+
+  button {
+    @include button-styles;
+    width: 240px;
+  }
+
+  span {
+    @include footer-styles;
+    padding: 13px 16px 0 42px;
+    margin-bottom: 53px;
+  }
+}
 
 .input--container {
   &.is-selected {
     border: 3px solid var(--secondary-color);
   }
-  position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   border: 3px solid var(--border-color);
   border-radius: 10px;
-  margin-bottom: 10px;
-  width: auto;
-  height: auto;
+  margin: 10px 63px 10px 63px;
+
   .server--image {
     position: relative;
   }

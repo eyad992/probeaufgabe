@@ -8,6 +8,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { LoggedinComponent } from './loggedin/loggedin.component';
 import { ServerComponent } from './server/server.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -24,6 +26,7 @@ import { ServerComponent } from './server/server.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
